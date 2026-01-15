@@ -26,7 +26,6 @@ function Navbar() {
           <Link to={"/"}>Home</Link>
           <Link to={"/Users"}>User</Link>
           <Link to={"/Coment"}>Coment</Link>
-          <Link to={"/Posts"}>Posts</Link>
         </div>
         <div>
           <button className="nav-btn" onClick={() => setMode(!mode)}>
