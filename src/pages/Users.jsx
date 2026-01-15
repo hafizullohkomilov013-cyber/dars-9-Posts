@@ -8,13 +8,18 @@ function Users() {
 
   useEffect(() => {
     async function GetPost(){
-      let res = await fetch("https://jsonplaceholder.typicode.com/users");
+      try {
+        let res = await fetch("https://jsonplaceholder.typicode.com/users");
 
-      if(!res.ok){
-        throw  new Error('Xatolik !')
+        if (!res.ok) {
+          throw new Error("Xatolik !");
+        }
+        let data = await res.json();
+        setPost(data);
+      } catch (error) {
+        console.log(error);
+        
       }
-      let data = await res.json()
-      setPost(data)
     }
     GetPost()
   }, [])

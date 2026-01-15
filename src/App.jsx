@@ -30,7 +30,6 @@ import Public from "./Layouts/Public"
 import React from 'react'
 import HomePage from './pages/HomePage'
 import Users from './pages/Users'
-import Posts from './pages/Posts'
 import Coment from './pages/Coment'
 
 function App() {
@@ -48,10 +47,6 @@ function App() {
         {
           path:'/Users',
           element:<Users/>
-        },
-        {
-          path:"/Posts",
-          element:<Posts/>,
         },
         {
           path:"/Coment",

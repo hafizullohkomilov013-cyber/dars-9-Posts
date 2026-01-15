@@ -6,14 +6,19 @@ function HomePage() {
 
   useEffect(() => {
     async function GetPost() {
-      let res = await fetch("https://jsonplaceholder.typicode.com/photos");
+      try {
+        let res = await fetch("https://jsonplaceholder.typicode.com/photos");
 
-      if (!res.ok) {
-        throw new Error("Xatolik !");
+        if (!res.ok) {
+          throw new Error("Xatolik !");
+        }
+
+        let data = await res.json();
+        setPost(data);
+      } catch (error) {
+        console.log(error);
+        
       }
-
-      let data = await res.json();
-      setPost(data);
     }
     GetPost();
   }, []);
