@@ -1,8 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 function HomePage() {
   const [post, setPost] = useState([]);
+
+  const deletePhoto = (id) => {
+    console.log(id);
+    const newPost = post.filter(item => item.id !== id)
+    setPost(newPost)
+    
+  }
 
   useEffect(() => {
     async function GetPost() {
@@ -17,6 +25,7 @@ function HomePage() {
         setPost(data);
       } catch (error) {
         console.log(error);
+        toast(error.message)
         
       }
     }
@@ -35,6 +44,9 @@ function HomePage() {
                 alt={item.title}
               />
               <h2>{item.title}</h2>
+              <div className="delete">
+                <button className="delete-btn" onClick={() => deletePhoto(item.id) }>Delete</button>
+              </div>
             </div>
           );
         })}

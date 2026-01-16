@@ -120,6 +120,7 @@ nav{
   align-items: center;
 }
 .photos-card{
+  position: relative;
   width: 100%;
   background-color: var(--border-color);
   border-radius: 10px;
@@ -128,12 +129,30 @@ nav{
   h2{
     font-weight: 500;
     font-size: 20px;
+    margin-bottom: 40px;
   }
 }
+.delete{
+  position: absolute;
+  right: 20px;
+  bottom:20px
+}
+.delete-btn{
+  padding: 10px 20px;
+  border: 2px solid rgb(149, 0, 0);
+  border-radius: 12px;
+  background-color: red;
+  color: white;
+}
+
+
 .photos-card img{
   width: 100%;
   max-width: 300px;
   border-radius: 10px;
+}
+footer{
+  background-color: var(--border-color);
 }
 
 
