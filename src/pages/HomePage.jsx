@@ -23,6 +23,7 @@ function HomePage() {
 
         let data = await res.json();
         setPost(data);
+        toast(`${id} ga ega card o'chirildi`)
       } catch (error) {
         console.log(error);
         toast(error.message)
